@@ -1,0 +1,14 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+  <path
+      android:fillColor="@color/primary_color"
+      android:pathData="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+  <!-- Simple circle as placeholder, replace with actual icon -->
+  <path
+      android:fillColor="@color/text_color_primary"
+      android:pathData="M6.5,9C7.3,9 8,9.7 8,10.5V13.5C8,14.3 7.3,15 6.5,15S5,14.3 5,13.5V10.5C5,9.7 5.7,9 6.5,9M17.5,9C18.3,9 19,9.7 19,10.5V13.5C19,14.3 18.3,15 17.5,15S16,14.3 16,13.5V10.5C16,9.7 16.7,9 17.5,9M15,6H9V8H15V6M15,16H9V18H15V16Z" />
+</vector>

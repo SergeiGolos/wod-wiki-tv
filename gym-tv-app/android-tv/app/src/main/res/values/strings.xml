@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">WOD Wiki TV</string>
+    <string name="timer_display_default">00:00</string>
+    <string name="qr_code_description">Scan to connect your mobile app</string>
+    <string name="foreground_service_notification_title">Gym Session Active</string>
+    <string name="foreground_service_notification_message">Streaming sensor data.</string>
+
+    <string name="ble_permission_denied">Bluetooth permission denied. App may not function correctly.</string>
+    <string name="location_permission_denied">Location permission denied. BLE scanning may not work.</string>
+    <string name="body_sensors_permission_denied">Body Sensors permission denied.</string>
+
+    <string name="status_scanning">Scanning for devices...</string>
+    <string name="status_connecting">Connecting to %s...</string>
+    <string name="status_connected">Connected to %s</string>
+    <string name="status_disconnected">Disconnected</string>
+    <string name="status_connection_failed">Connection failed</string>
+    <string name="no_device_found">No compatible device found</string>
+
+    <string name="heart_rate_label">HR:</string>
+    <string name="gps_label">GPS:</string>
+    <string name="bpm_unit">bpm</string>
+    <string name="not_available_short">N/A</string>
+</resources>
