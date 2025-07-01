@@ -17,6 +17,7 @@
 # -keep class kotlinx.serialization.internal.*
 
 # Hilt
--dontwarn dagger.hilt.android.internal.**
--dontwarn dagger.hilt.internal.aggregatedroot.codegen.**
--dontwarn dagger.hilt.processor.internal.disableplugins.DisablePluginsProcessor
+# Hilt uses reflection and generated code, these rules prevent R8 from removing necessary code.
+-dontwarn dagger.hilt.android.internal.** # Suppress warnings for Hilt's internal classes.
+-dontwarn dagger.hilt.internal.aggregatedroot.codegen.** # Suppress warnings for Hilt's generated root codegen.
+-dontwarn dagger.hilt.processor.internal.disableplugins.DisablePluginsProcessor # Suppress warnings for Hilt's plugin disabling processor.

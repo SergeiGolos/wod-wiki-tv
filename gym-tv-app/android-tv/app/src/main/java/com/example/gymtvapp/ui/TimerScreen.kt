@@ -173,17 +173,31 @@ fun UserRow(userData: UserData) {
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Text(
+                // TODO: Replace with a more user-friendly identifier than truncated ID.
+                // Consider user-settable names or other identifiable info from mobile app.
                 text = "User: ${userData.id.take(8)}...", // Show partial ID
                 style = MaterialTheme.typography.bodyLarge
             )
             Row {
+                val context = LocalContext.current
+                val heartRateText = if (userData.heartRate != null) {
+                    context.getString(R.string.user_heart_rate_format, userData.heartRate.toString(), context.getString(R.string.bpm_unit))
+                } else {
+                    context.getString(R.string.user_heart_rate_na_format, context.getString(R.string.not_available_short))
+                }
                 Text(
-                    text = "${LocalContext.current.getString(R.string.heart_rate_label)} ${userData.heartRate?.toString() ?: LocalContext.current.getString(R.string.not_available_short)} ${LocalContext.current.getString(R.string.bpm_unit)}",
+                    text = heartRateText,
                     style = MaterialTheme.typography.bodyMedium,
                     modifier = Modifier.padding(end = 16.dp)
                 )
+
+                val gpsStatusText = if (userData.gpsLat != null && userData.gpsLon != null) {
+                    context.getString(R.string.gps_available_short)
+                } else {
+                    context.getString(R.string.not_available_short)
+                }
                 Text(
-                    text = "${LocalContext.current.getString(R.string.gps_label)} ${if (userData.gpsLat != null && userData.gpsLon != null) "Yes" else LocalContext.current.getString(R.string.not_available_short)}",
+                    text = context.getString(R.string.user_gps_status_format, gpsStatusText),
                     style = MaterialTheme.typography.bodyMedium
                 )
             }

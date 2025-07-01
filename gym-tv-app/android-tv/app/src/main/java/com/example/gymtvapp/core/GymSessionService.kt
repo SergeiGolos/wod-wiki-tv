@@ -25,8 +25,7 @@ class GymSessionService : Service() {
 
     override fun onCreate() {
         super.onCreate()
-        createNotificationChannel()
-        startForeground(NOTIFICATION_ID, createNotification())
+        // Basic service initialization if needed, but foreground promotion happens in onStartCommand
     }
 
     private fun createNotificationChannel() {
@@ -34,7 +33,7 @@ class GymSessionService : Service() {
             val serviceChannel = NotificationChannel(
                 NOTIFICATION_CHANNEL_ID,
                 "Gym Session Service Channel",
-                NotificationManager.IMPORTANCE_DEFAULT
+                NotificationManager.IMPORTANCE_LOW // Changed for less intrusive notification on TV
             )
             val manager = getSystemService(NotificationManager::class.java)
             manager?.createNotificationChannel(serviceChannel)
@@ -48,13 +47,18 @@ class GymSessionService : Service() {
             .setContentTitle(getString(R.string.foreground_service_notification_title))
             .setContentText(getString(R.string.foreground_service_notification_message))
             .setSmallIcon(R.drawable.ic_launcher_foreground) // Replace with a suitable icon
+            .setOngoing(true) // Important for foreground service notifications
             // Add actions or more details if necessary
             .build()
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        createNotificationChannel() // Ensure channel is created before starting foreground
+        startForeground(NOTIFICATION_ID, createNotification())
+
         // Start WebSocket server or other long-running tasks here
         // webSocketServer.start()
+        // Log.d("GymSessionService", "Service started and promoted to foreground.")
 
         // If the service is killed, it will be restarted
         return START_STICKY

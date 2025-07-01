@@ -16,8 +16,14 @@
     <string name="status_connection_failed">Connection failed</string>
     <string name="no_device_found">No compatible device found</string>
 
-    <string name="heart_rate_label">HR:</string>
-    <string name="gps_label">GPS:</string>
+    <string name="heart_rate_label">HR:</string> <!-- Kept for simple labels if needed elsewhere -->
+    <string name="gps_label">GPS:</string> <!-- Kept for simple labels if needed elsewhere -->
     <string name="bpm_unit">bpm</string>
     <string name="not_available_short">N/A</string>
+
+    <!-- Formatted strings for user data display -->
+    <string name="user_heart_rate_format">HR: %1$s %2$s</string> <!-- e.g., HR: 120 bpm -->
+    <string name="user_heart_rate_na_format">HR: %1$s</string> <!-- e.g., HR: N/A -->
+    <string name="user_gps_status_format">GPS: %1$s</string> <!-- e.g., GPS: Yes / GPS: N/A -->
+    <string name="gps_available_short">Yes</string>
 </resources>

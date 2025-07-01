@@ -14,33 +14,27 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            // Using TvMaterialTheme for TV-specific styling
-            MainAppScreen()
+            GymTvApp() // Set the GymTvApp as the root composable
         }
+    }
+}
+
+@OptIn(ExperimentalTvMaterial3Api::class)
+@Composable
+fun GymTvApp() {
+    // Apply the TV Material Theme at the root of the application's UI
+    MaterialTheme {
+        // TimerScreen will be the main content.
+        // ViewModel providing actual data would be injected or created here in a real scenario.
+        TimerScreen()
     }
 }
 
 // Opt-in for ExperimentalTvMaterial3Api is required
-@OptIn(ExperimentalTvMaterial3Api::class)
-@Composable
-fun MainAppScreen() {
-    // Using TV Material Theme
-    MaterialTheme {
-        Box(
-            modifier = Modifier.fillMaxSize(),
-            contentAlignment = Alignment.Center
-        ) {
-            // Placeholder Text. This will be replaced by the main timer screen UI.
-            Text(text = "Welcome to WOD Wiki TV!")
-        }
-    }
-}
-
+// This preview now reflects the actual app structure.
 @OptIn(ExperimentalTvMaterial3Api::class)
 @Preview(device = "id:tv_1080p")
 @Composable
 fun DefaultPreview() {
-    MaterialTheme {
-        MainAppScreen()
-    }
+    GymTvApp()
 }

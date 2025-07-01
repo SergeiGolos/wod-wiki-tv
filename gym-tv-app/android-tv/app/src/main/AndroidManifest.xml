@@ -61,7 +61,7 @@
             android:name=".core.GymSessionService"
             android:enabled="true"
             android:exported="false"
-            android:foregroundServiceType="dataSync" /> <!-- Or "remoteMessaging" or "mediaPlayback" depending on primary use -->
+            android:foregroundServiceType="remoteMessaging" /> <!-- Changed from dataSync, more fitting for WebSocket comms -->
 
     </application>
 

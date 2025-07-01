@@ -39,7 +39,7 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion '1.5.3' // Check for latest compatible version
+        kotlinCompilerExtensionVersion '1.5.10' // Aligned with Kotlin 1.9.10 as per PR feedback
     }
     packagingOptions {
         resources {
@@ -71,10 +71,13 @@ dependencies {
 
 
     // Ktor for WebSockets (Server)
+    // Ktor Server: The Android TV app acts as a WebSocket server for mobile clients.
+    // This has implications for resource usage and network configuration on the TV device.
+    // This architectural choice is based on the project README.
     implementation 'io.ktor:ktor-server-core:2.3.6'
-    implementation 'io.ktor:ktor-server-cio:2.3.6'
+    implementation 'io.ktor:ktor-server-cio:2.3.6' // Using CIO engine for Ktor server
     implementation 'io.ktor:ktor-server-websockets:2.3.6'
-    implementation 'io.ktor:ktor-serialization-kotlinx-json:2.3.6' // For JSON serialization
+    implementation 'io.ktor:ktor-serialization-kotlinx-json:2.3.6' // For JSON serialization with WebSockets
 
     // QR Code Generation (ZXing)
     implementation 'com.google.zxing:core:3.5.2'
