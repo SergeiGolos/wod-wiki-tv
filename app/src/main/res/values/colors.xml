@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- TV Color Palette optimized for 10-foot experience -->
+    <color name="tv_primary">#1976D2</color>
+    <color name="tv_primary_variant">#0D47A1</color>
+    <color name="tv_on_primary">#FFFFFF</color>
+    
+    <color name="tv_secondary">#03DAC6</color>
+    <color name="tv_secondary_variant">#018786</color>
+    <color name="tv_on_secondary">#000000</color>
+    
+    <color name="tv_background">#121212</color>
+    <color name="tv_on_background">#FFFFFF</color>
+    
+    <color name="tv_surface">#1E1E1E</color>
+    <color name="tv_on_surface">#FFFFFF</color>
+    
+    <color name="tv_error">#CF6679</color>
+    <color name="tv_on_error">#000000</color>
+    
+    <!-- Heart rate colors -->
+    <color name="heart_rate_normal">#4CAF50</color>
+    <color name="heart_rate_elevated">#FF9800</color>
+    <color name="heart_rate_high">#F44336</color>
+    
+    <!-- Focus states for D-pad navigation -->
+    <color name="focus_highlight">#FFFFFF</color>
+    <color name="focus_border">#2196F3</color>
+</resources>
