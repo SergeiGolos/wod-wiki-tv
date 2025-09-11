@@ -1,0 +1,121 @@
+# Gradle
+.gradle/
+build/
+gradle.properties
+gradlew
+gradlew.bat
+
+# Android
+*.apk
+*.aar
+*.dex
+*.so
+*.log
+local.properties
+
+# Android Studio
+.idea/
+*.iml
+*.ipr
+*.iws
+.idea_modules/
+atlassian-ide-plugin.xml
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Kotlin
+*.class
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+.idea_modules/
+
+# VS Code
+.vscode/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Logs
+*.log
+logs/
+
+# Coverage reports
+coverage/
+*.exec
+
+# Test results
+test-results/
+htmlcov/
+
+# Node.js (if any)
+node_modules/
+npm-debug.log*
+
+# Python (if any)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Secrets
+secrets.properties
+api-keys.properties
+
+# Backup files
+*.bak
+*.backup
+
+# Generated files
+gen/
+generated/
+
+# ProGuard
+proguard/
+*.pro
+
+# Lint
+lint/
+*.lint
+
+# Firebase
+google-services.json
+google-services.xml
+
+# Crashlytics
+com.crashlytics.android.ndk.external-symbols.zip
