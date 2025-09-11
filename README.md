@@ -36,28 +36,6 @@ The application consists of two main components:
 
 ---
 
-## 📂 Repository Structure
-
-```
-gym-tv-app/
-├── android-tv/
-│   ├── app/
-│   │   ├── src/main/java/
-│   │   │   ├── ui (screens & components)
-│   │   │   ├── core (timer, connectivity, bluetooth)
-│   │   │   └── models
-│   │   └── src/main/res (layouts, resources)
-└── mobile-app/
-    ├── app/
-        ├── src/main/java/
-        │   ├── ui (screens & components)
-        │   ├── core (websocket, bluetooth, location)
-        │   └── models
-        └── src/main/res (layouts, resources)
-```
-
----
-
 ## ✅ Implementation Steps
 
 ### 📺 Android TV Application
