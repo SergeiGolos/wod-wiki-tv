@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">WoD Wiki TV</string>
+    <string name="welcome_message">Welcome to WoD Wiki TV</string>
+    <string name="connecting_to_heart_rate_monitor">Connecting to heart rate monitor...</string>
+    <string name="heart_rate_bpm">%d BPM</string>
+    <string name="scan_for_devices">Scan for Devices</string>
+    <string name="connect">Connect</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="connected">Connected</string>
+    <string name="disconnected">Disconnected</string>
+    <string name="scanning">Scanning...</string>
+    <string name="no_devices_found">No heart rate monitors found</string>
+    <string name="bluetooth_permission_required">Bluetooth permission is required</string>
+    <string name="location_permission_required">Location permission is required for Bluetooth scanning</string>
+    <string name="permission_denied">Permission denied</string>
+    <string name="grant_permission">Grant Permission</string>
+    <string name="json_data_display">JSON Data Display</string>
+    <string name="heart_rate_monitor">Heart Rate Monitor</string>
+    <string name="react_webview">React WebView</string>
+    <string name="chromecast_receiver">Chromecast Receiver</string>
+    <string name="invalid_json">Invalid JSON data received</string>
+    <string name="receiving_chromecast_data">Receiving Chromecast data...</string>
+</resources>
