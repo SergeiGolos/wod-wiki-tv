@@ -3,13 +3,40 @@
 **Doc: Documentation Index – Comprehensive Project Overview**
 - Audience: developer | user | operator
 - Source of Truth: Complete project documentation suite
-- Version: v1.0 (September 2024)
+- Version: v1.1 (September 2024)
 
 ## Documentation Suite Overview
 
 This document serves as the central index for all WoD Wiki TV project documentation. Each document provides specific insights into different aspects of the project, from high-level architecture to detailed implementation guides.
 
-## Core Documentation Files
+---
+
+## 🚀 Essential Quick Start Documents
+
+### [`QUICKSTART_GUIDE.md`](./QUICKSTART_GUIDE.md) ⭐ **NEW**
+**Purpose:** Get developers up and running in 5 minutes
+**Audience:** New developers, quick setup
+**Content:**
+- Prerequisites checklist
+- 5-minute setup process
+- Basic feature testing
+- Quick troubleshooting
+- Links to detailed documentation
+
+### [`ARCHITECTURE_AND_BUILD_GUIDE.md`](./ARCHITECTURE_AND_BUILD_GUIDE.md) ⭐ **NEW**
+**Purpose:** Complete architecture overview with detailed build/test/deploy instructions
+**Audience:** All developers, DevOps, technical leads
+**Content:**
+- High-level architecture diagrams
+- Complete feature breakdown
+- Build system configuration
+- Comprehensive build, test, and deployment instructions
+- Development workflow recommendations
+- Troubleshooting guide
+
+---
+
+## 📚 Core Documentation Files
 
 ### 1. PROJECT_JOURNAL.md
 **Purpose:** Comprehensive technical documentation and project analysis
