@@ -1,132 +1,105 @@
-# wod-wiki-tv
+# WoD Wiki TV - Android TV Fitness Application
 
-# Gym Timer Android TV App Implementation Plan
+[![Android TV](https://img.shields.io/badge/Android%20TV-API%2021+-brightgreen)](https://developer.android.com/tv)
+[![Kotlin](https://img.shields.io/badge/Kotlin-1.9.10-blue)](https://kotlinlang.org/)
+[![Compose](https://img.shields.io/badge/Jetpack%20Compose-1.5.4-orange)](https://developer.android.com/jetpack/compose)
 
-This document outlines the implementation plan for building an Android TV application designed as a gym timer with QR-code based user connections and Bluetooth sensor data integration (GPS and heart rate monitoring).
+A comprehensive Android TV application showcasing modern development techniques including Bluetooth heart rate monitoring, React WebView integration, Chromecast functionality, and real-time JSON data processing.
 
----
+## 🚀 Quick Start
 
-## 📌 Overview
+**Want to get started immediately?** See [`QUICKSTART_GUIDE.md`](./QUICKSTART_GUIDE.md)
 
-The application consists of two main components:
+## 📖 Complete Documentation
 
-1. **Android TV App**: Displays a gym timer, generates QR codes for session connections, and shows real-time user data (heart rate, GPS).
-2. **Mobile Companion App**: Allows users to join a session by scanning QR codes, integrating Bluetooth devices (e.g., heart rate monitors), and streaming GPS and heart rate data back to the TV app.
-
----
-
-## 🚧 Project Setup and Dependencies
-
-### Android TV App:
-- Create a new Android TV project in Android Studio.
-- Dependencies:
-  - Jetpack Compose TV / Leanback library
-  - Kotlin Coroutines & Flow
-  - WebSocket Server (Ktor or OkHttp)
-  - QR Code generation library (ZXing or ML Kit)
-
-### Mobile Companion App:
-- Create a separate Android/iOS project or module.
-- Dependencies:
-  - Jetpack Compose (recommended) or traditional XML-based UI
-  - Kotlin Coroutines & Flow
-  - WebSocket Client library (Ktor or OkHttp)
-  - Bluetooth APIs for heart rate sensors
-  - Location APIs (Fused Location Provider)
+**Need detailed architecture and build information?** See [`ARCHITECTURE_AND_BUILD_GUIDE.md`](./ARCHITECTURE_AND_BUILD_GUIDE.md)
 
 ---
 
-## ✅ Implementation Steps
+## 🎯 Key Features
 
-### 📺 Android TV Application
+- **📱 Android TV Optimized**: Built for 10-foot experience with D-pad navigation
+- **💓 Heart Rate Monitoring**: Bluetooth Low Energy integration with Nordic library
+- **⚛️ React Integration**: WebView bridge for cross-platform code sharing
+- **📺 Chromecast Ready**: Receive and process Cast framework events
+- **📝 JSON Editor**: Real-time JSON editing with validation and formatting
+- **🏗️ Modern Stack**: Jetpack Compose, Hilt DI, Kotlin Coroutines
 
-#### Step 1: Setup Project and UI
-- Initialize Android TV project in Android Studio.
-- Develop main timer screen UI using Jetpack Compose TV/Leanback.
-- Implement QR code generation and display functionality.
+## 📊 Project Overview
 
-#### Step 2: Timer Logic
-- Implement timer functionality (countdown, intervals) in `TimerManager`.
-- Reflect timer updates in UI using state management.
-
-#### Step 3: WebSocket Server Setup
-- Set up a WebSocket server to receive user data.
-- Generate unique session identifiers and tokens for security.
-
-#### Step 4: Real-time User Data Display
-- Implement UI components to display connected user data (heart rate, GPS).
-- Handle incoming WebSocket messages to update the UI.
-
----
-
-### 📱 Mobile Companion Application
-
-#### Step 1: Setup Project and UI
-- Create a new mobile companion app project.
-- Develop QR code scanning screen.
-- Develop dashboard UI to show current heart rate and GPS status.
-
-#### Step 2: QR Code Scanning and Session Connection
-- Implement QR code scanning to read session details.
-- Establish WebSocket connection with the Android TV app.
-
-#### Step 3: Bluetooth Integration
-- Implement Bluetooth scanning and pairing functionality.
-- Continuously read and parse heart rate data.
-
-#### Step 4: GPS and Bluetooth Data Streaming
-- Utilize location services to get GPS data.
-- Stream the GPS and heart rate data to Android TV via WebSocket.
-
----
-
-## 📡 Communication Flow Diagram
+The WoD Wiki TV project demonstrates a modern Android TV application with advanced integrations:
 
 ```
-[Android TV App] <-- WebSocket (GPS, HR data) <-- [Mobile Companion App]
-      │
-      └── Generates QR code (Session ID, Token)
-            │
-            └── Scanned by Mobile App
+┌─────────────────────────────────────────────────────────────┐
+│                    WoD Wiki TV Application                   │
+├─────────────────────────────────────────────────────────────┤
+│  🎮 TV-Optimized UI (Jetpack Compose for TV)               │
+│  ├── JSON Data Editor & Validator                          │
+│  ├── Bluetooth Heart Rate Monitor                          │
+│  ├── React WebView Integration                              │
+│  └── Chromecast Event Receiver                             │
+├─────────────────────────────────────────────────────────────┤
+│  🔧 Services & Integration                                  │
+│  ├── HeartRateService (BLE Foreground Service)             │
+│  ├── CastOptionsProvider (Chromecast Config)               │
+│  └── JavaScript Bridge (Android ↔ React)                   │
+├─────────────────────────────────────────────────────────────┤
+│  🏗️ Foundation                                              │
+│  ├── Android TV Framework (Leanback)                       │
+│  ├── Hilt Dependency Injection                             │
+│  ├── Kotlin Coroutines & Flow                              │
+│  └── Professional Libraries (Nordic BLE, Cast SDK)         │
+└─────────────────────────────────────────────────────────────┘
 ```
 
----
+## 📚 Documentation Structure
 
-## 🛡️ Security & Privacy
+| Document | Purpose | Audience |
+|----------|---------|----------|
+| [`QUICKSTART_GUIDE.md`](./QUICKSTART_GUIDE.md) | Get running in 5 minutes | New developers |
+| [`ARCHITECTURE_AND_BUILD_GUIDE.md`](./ARCHITECTURE_AND_BUILD_GUIDE.md) | Complete technical guide | All developers |
+| [`PROJECT_JOURNAL.md`](./PROJECT_JOURNAL.md) | Implementation details | Technical team |
+| [`ANDROID_APP_README.md`](./ANDROID_APP_README.md) | Feature documentation | Product team |
+| [`LIBRARY_INTEGRATION_GUIDE.md`](./LIBRARY_INTEGRATION_GUIDE.md) | Dependency details | DevOps/Integration |
 
-- Ensure secure WebSocket communication using session tokens and encryption.
-- Manage Bluetooth pairing securely and safely.
-- Clearly communicate data privacy policies to users.
+## 🏗️ Quick Build Instructions
 
----
+```bash
+# Clone repository
+git clone https://github.com/SergeiGolos/wod-wiki-tv.git
+cd wod-wiki-tv
 
-## 🚩 Testing
+# Build debug APK
+./gradlew assembleDebug
 
-- **Unit Testing:** Core logic (timer, Bluetooth, WebSocket communication).
-- **Integration Testing:** End-to-end functionality with real devices.
-- **User Acceptance Testing:** Ensure app usability, UI responsiveness, and reliability.
+# Install to Android TV emulator/device
+./gradlew installDebug
+```
 
----
+## 🎯 Current Implementation Status
 
-## 🚀 Deployment
+- ✅ **Android TV Foundation**: Complete TV manifest, navigation, theming
+- ✅ **JSON Data Display**: Real-time editor with validation
+- ✅ **Heart Rate Monitor**: UI complete, simulated data (BLE integration ready)
+- ✅ **React WebView**: Bidirectional communication bridge
+- ✅ **Chromecast Receiver**: Event processing (simulated, framework integrated)
 
-- Publish Android TV app to Google Play Store (optimize for TV).
-- Publish companion mobile app to respective app stores (Google Play, Apple App Store if applicable).
-- Provide user documentation and support resources.
+## 🔧 Technology Stack
 
----
+| Category | Technology | Version |
+|----------|------------|---------|
+| **Platform** | Android TV | API 21+ |
+| **Language** | Kotlin | 1.9.10 |
+| **UI Framework** | Jetpack Compose for TV | 1.5.4 |
+| **Architecture** | MVVM + Hilt DI | 2.48.1 |
+| **BLE Library** | Nordic Semiconductor | 2.6.1 |
+| **Cast Framework** | Google Cast SDK | 21.4.0 |
+| **Build System** | Gradle with Kotlin DSL | 8.4 |
 
-## 📈 Future Enhancements
+## 🤝 Contributing
 
-- Historical data visualizations and export options.
-- Analytics dashboard for trainers.
-- Integration with wearable devices (Wear OS, Apple Watch).
-- User statistics and achievement tracking.
+Contributions are welcome! Please read the contributing guidelines in [`ARCHITECTURE_AND_BUILD_GUIDE.md`](./ARCHITECTURE_AND_BUILD_GUIDE.md#-contributing) before getting started.
 
----
+## 📄 License
 
-## 📖 Documentation & Maintenance
-
-- Maintain clear, comprehensive documentation for codebase and APIs.
-- Schedule regular app updates and security patches.
-- Collect and analyze user feedback for continuous improvement.
+This project is part of the WoD Wiki TV application suite.
